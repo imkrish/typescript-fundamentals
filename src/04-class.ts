@@ -122,4 +122,24 @@ namespace classes {
     const itProject = new ITProject('IT Project')
     itProject.printName()
 
+    // private constructors
+    class OnlyOne {  // Singleton
+
+        private static instance: OnlyOne
+
+        private constructor(public readonly name: string) {}  // Note: readonly
+
+        static getInstance(): OnlyOne {
+            if (!OnlyOne.instance) {
+                OnlyOne.instance = new OnlyOne('Singleton')
+            }
+            return OnlyOne.instance
+        }
+    }
+    
+    const singleton = OnlyOne.getInstance()
+    console.log(singleton)
+    console.log(singleton.name)
+    // singleton.name = 'something else' // Error because of readonly 
+    console.log(singleton)
 }
