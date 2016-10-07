@@ -52,42 +52,74 @@ namespace classes {
     const krishDev = new Developer('Krish', 25, 'imKrish')
     console.log(krishDev)
 
-}
 
-// Getters & Setters
-class Plant {
 
-    private _species: string = 'Default'
+    // Getters & Setters
+    class Plant {
 
-    get species(): string {
-        return 'Hi ' + this._species
-    }
+        private _species: string = 'Default'
 
-    set species(value: string) {
-        if (value.length > 3) {
-            this._species = value
-        } else {
-            this._species = 'Default'
+        get species(): string {
+            return 'Hi ' + this._species
+        }
+
+        set species(value: string) {
+            if (value.length > 3) {
+                this._species = value
+            } else {
+                this._species = 'Default'
+            }
         }
     }
-}
 
-const plant = new Plant()
-console.log(plant.species)
-plant.species = 'ha'  // become an argument of set species()
-console.log(plant.species)
-plant.species = 'Homosapien'  // become an argument of set species()
-console.log(plant.species)
+    const plant = new Plant()
+    console.log(plant.species)
+    plant.species = 'ha'  // become an argument of set species()
+    console.log(plant.species)
+    plant.species = 'Homosapien'  // become an argument of set species()
+    console.log(plant.species)
 
-// Static Properties & Methods
-class Helpers {
+    // Static Properties & Methods
+    class Helpers {
 
-    static readonly PI: number = 3.14  // Note: readonly > cannot change the value of PI
-    static calCircumference(diameter: number): number {
-        return this.PI * diameter
+        static readonly PI: number = 3.14  // Note: readonly > cannot change the value of PI
+        static calCircumference(diameter: number): number {
+            return this.PI * diameter
+        }
     }
-}
 
-// Helpers.PI = 5
-console.log(Helpers.PI)
-console.log(Helpers.calCircumference(5))
+    // Helpers.PI = 5
+    console.log(Helpers.PI)
+    console.log(Helpers.calCircumference(5))
+
+    // Abstract Classes & Methods -> cannot be instantiated
+    abstract class Project {
+
+        projectName: string = 'Default'
+        budget: number
+
+        abstract printName(): void
+
+        calcBudget() {
+            return this.budget * 2
+        }
+    }
+
+    // const project = new Project()
+
+    class ITProject extends Project {
+
+        constructor(projectName: string) {
+            super()
+            this.projectName = projectName
+        }
+
+        printName() {  // Have to implement this abstract method
+            console.log(this.projectName)
+        }
+    }
+
+    const itProject = new ITProject('IT Project')
+    itProject.printName()
+
+}
