@@ -78,3 +78,16 @@ plant.species = 'ha'  // become an argument of set species()
 console.log(plant.species)
 plant.species = 'Homosapien'  // become an argument of set species()
 console.log(plant.species)
+
+// Static Properties & Methods
+class Helpers {
+
+    static readonly PI: number = 3.14  // Note: readonly > cannot change the value of PI
+    static calCircumference(diameter: number): number {
+        return this.PI * diameter
+    }
+}
+
+// Helpers.PI = 5
+console.log(Helpers.PI)
+console.log(Helpers.calCircumference(5))
