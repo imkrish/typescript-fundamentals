@@ -6,10 +6,13 @@
         <title>TypeScript</title>
     </head>
     <body>
-        <h1>Hello</h1>
+        <h1 id="app">Hello to my App!!!</h1>
         <script src="node_modules/systemjs/dist/system.js"></script>
         <script>
             SystemJS.config({
+                map: {
+                    'jQuery': '/node_modules/jquery/dist/jquery.min.js'
+                },
                 baseURL: '/src/10-jquery',
                 defaultJSExtensions: true
             })
