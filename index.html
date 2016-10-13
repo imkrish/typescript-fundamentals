@@ -7,17 +7,6 @@
     </head>
     <body>
         <h1 id="app">Hello to my App!!!</h1>
-        <script src="node_modules/systemjs/dist/system.js"></script>
-        <script>
-            SystemJS.config({
-                map: {
-                    'jQuery': '/node_modules/jquery/dist/jquery.min.js'
-                },
-                baseURL: '/src/11-workflow',
-                defaultJSExtensions: true
-            })
-
-            SystemJS.import('main.js')
-        </script>
+        <script src="bundle.js"></script>
     </body>
 </html>

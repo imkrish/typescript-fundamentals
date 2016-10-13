@@ -24,4 +24,8 @@ namespace typescript_workflow {
 
     // --------------------------- Gulp ----------------------------------
     //npm install --save-dev gulp gulp-typescript
+
+
+    // ------------------ Webpack --------------------------
+    // npm install --save-dev webpack ts-loader
 }
