@@ -22,5 +22,6 @@ namespace typescript_workflow {
     // tsc app.ts --sourceMap
     // tsc -p config/tsconfig.json
 
-    // --------------------------- Normal Workflow ----------------------------------
+    // --------------------------- Gulp ----------------------------------
+    //npm install --save-dev gulp gulp-typescript
 }
